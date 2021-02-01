@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useContext } from "react";
 import GlobalState from "../global/GlobalState";
 import { useParams } from "react-router";
