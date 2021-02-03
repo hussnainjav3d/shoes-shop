@@ -4,7 +4,7 @@ import GlobalState from "../global/GlobalState";
 import { useParams } from "react-router";
 
 const ProductItems = () => {
-  const data = useContext(GlobalState);
+  const { data } = useContext(GlobalState);
   const { productId } = useParams();
   if (!data[productId]) {
     return "Product Not Found";

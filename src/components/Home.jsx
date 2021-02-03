@@ -11,7 +11,7 @@ const Home = () => {
           <img
             src={imghome}
             className="img-rotation home-img"
-            alt="Home Imges"
+            alt="Home Images"
           />
         </div>
         <div className="home-content">
