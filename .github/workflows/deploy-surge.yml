@@ -34,8 +34,8 @@ jobs:
         
       - name: Building Projects
         run: yarn build
-        run: cd build
-        run: cp index.html 200.html
+        command: cd build
+        command: cp index.html 200.html
       # Runs a set of commands using the runners shell
       - name: Installing Surge To Deploy
         run: npm install -g surge
