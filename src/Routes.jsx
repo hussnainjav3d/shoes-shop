@@ -6,6 +6,7 @@ import ProductHome from "./components/ProductHome";
 import Cart from "./components/Cart";
 
 import { Route, Routes } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
 const ShoesRoutes = () => {
   return (
     <>
@@ -16,7 +17,7 @@ const ShoesRoutes = () => {
           <Route path=":productId" element={<ProductItems />} />
         </Route>
         <Route path="cart" element={<Cart />} />
-        <Route path="*" element="Error 404" />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
