@@ -2,18 +2,32 @@
 import React, { useContext } from "react";
 import GlobalState from "../global/GlobalState";
 import { useParams } from "react-router";
+import ErrorPage from "./ErrorPage";
 
 const ProductItems = () => {
-  const { data } = useContext(GlobalState);
+  const { data, addItem } = useContext(GlobalState);
   const { productId } = useParams();
+  console.table(data);
+  console.table(data[productId]);
+  const handleChange = (e) => {
+    const selectedData = data[productId];
+    addItem({
+      id: Math.random(),
+      name: selectedData.name,
+      price: selectedData.price,
+      img: selectedData.img,
+    });
+  };
   if (!data[productId]) {
-    return "Product Not Found";
+    return <ErrorPage />;
   } else {
     return (
       <section className="container product-detail">
         <div className="product-header">
           <h1 className="product-title">{data[productId].name}</h1>
-          <button className="btn">Add To Cart</button>
+          <button className="btn" onClick={handleChange}>
+            Add To Cart
+          </button>
         </div>
         <div className="content">
           (STILL) DESIGNED TO KEEP YOU ON THE RUN.{" "}

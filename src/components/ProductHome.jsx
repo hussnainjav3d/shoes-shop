@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import GlobalState from "../global/GlobalState";
 
 const ProductHome = () => {
-  const { data } = useContext(GlobalState);
+  const { data, addItem } = useContext(GlobalState);
   const dataKeys = Object.keys(data);
-  const { addItem } = useContext(GlobalState);
+
   const handleChange = (e) => {
     e.preventDefault();
     const selectedItem = e.target[0].id;
@@ -31,7 +31,14 @@ const ProductHome = () => {
                   <p>{data[dataItem].name}</p>
                   <p>{`$ ${data[dataItem].price}`}</p>
                   <form onSubmit={handleChange}>
-                    <input id={dataItem} type="submit" value="Add to cart" />{" "}
+                    <button
+                      id={dataItem}
+                      type="submit"
+                      className="btn-small"
+                      value=""
+                    >
+                      Add to Cart
+                    </button>{" "}
                   </form>
                   <Link to={dataItem}>
                     <button className="btn">Details</button>

@@ -26,6 +26,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Utitlities */
 
 img {
@@ -197,6 +201,16 @@ img {
   font-size: 4rem;
 }
 
+.btn-small {
+  margin-top: 0.75rem;
+  border: 0;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
 .card-list {
   margin: 0 auto;
   margin-top: 3rem;
@@ -315,6 +329,19 @@ img {
 
 .item-not-found img {
   width: 25rem;
+}
+
+/* error page */
+
+.error-page {
+  background-color: var(--dark_color-lighten);
+  color: var(--dark_color);
+  height: calc(100vh - var(--header_hight));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vw;
 }
 
 /* Tootal Bill */
